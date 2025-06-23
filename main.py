@@ -26,7 +26,7 @@ def train_model():
         project='runs/train',
         save_period=1            #Luôn lưu mô hình mỗi epoch
     )
-    print("✅ Huấn luyện hoàn tất!")
+    print(" Huấn luyện hoàn tất!")
 
 # ==== 2. Dự đoán và thống kê hành vi lái xe ====
 def predict_and_analyze():
@@ -42,7 +42,7 @@ def predict_and_analyze():
     count_an_toan = 0
     count_khong_ro = 0
 
-    print("🔍 ĐANG DỰ ĐOÁN VÀ PHÂN TÍCH...")
+    print(" ĐANG DỰ ĐOÁN VÀ PHÂN TÍCH...")
 
     for filename in os.listdir(test_img_folder):
         if filename.lower().endswith(('.jpg', '.png')):
@@ -78,8 +78,8 @@ def predict_and_analyze():
     with open(statistics_file, "w", encoding="utf-8") as f:
         f.write(stat_text)
 
-    print(f"📁 Đã lưu thống kê tại: {statistics_file}")
-    print("✅ Dự đoán và thống kê hoàn tất!")
+    print(f" Đã lưu thống kê tại: {statistics_file}")
+    print(" Dự đoán và thống kê hoàn tất!")
 
 # ==== 3. Đánh giá độ chính xác mô hình ====
 def evaluate_model():
@@ -104,7 +104,7 @@ def evaluate_model():
     print(f"Recall         : {recall:.3f}")
     print(f"mAP@0.5        : {map50:.3f}")
     print(f"mAP@0.5:0.95   : {map5095:.3f}")
-    print("📁 Đã lưu biểu đồ và báo cáo tại: runs/detect/")
+    print(" Đã lưu biểu đồ và báo cáo tại: runs/detect/")
 
 # ==== 4. Hàm main chọn chế độ ====
 def main():
@@ -117,7 +117,7 @@ def main():
     elif mode == "eval":
         evaluate_model()
     else:
-        print("❌ Chế độ không hợp lệ. Chọn 'train', 'predict' hoặc 'eval'.")
+        print(" Chế độ không hợp lệ. Chọn 'train', 'predict' hoặc 'eval'.")
 
 # ==== 5. Gọi chương trình chính ====
 if __name__ == "__main__":
